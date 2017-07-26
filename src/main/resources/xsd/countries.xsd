@@ -1,0 +1,48 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:playground="http://giorgoch.com/playground/schema/cities"
+	targetNamespace="http://giorgoch.com/playground/schema/cities"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="City">
+		<xs:sequence>
+			<xs:element name="country" type="xs:string" />
+			<xs:element name="code" type="xs:int" />
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="population" type="xs:int" />
+			<xs:element name="founded" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="getCityByCodeRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="code" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getCityByCodeResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="city" type="playground:City" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getCountryByCityNameRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="cityName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="getCountryByCityNameResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="country" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
